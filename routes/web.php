@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', 'BooksController@index');
-Route::get('/book/{alias}', 'BooksController@book');
+Route::get('/', 'Controller@index');
+Route::get('/book/view/{alias}', 'BooksController@view');
+Route::get('/book/read/{alias1}/{alias2}', 'BooksController@read');
 
 /*Route::get('/', function () {
     return view('welcome');

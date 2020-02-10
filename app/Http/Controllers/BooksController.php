@@ -7,18 +7,20 @@ use App;
 
 class BooksController extends Controller
 {
-    
-	public function index() 
-	{
-		return view('welcome');
-	}
 
-	public function book($id)
+	public function view($id)
 	{
 		$book = App\Books::find($id);
 		return view('book.view', [
 			'book' => $book
 		]);
 	}
+
+	public function read()
+	{
+		return view('book.read', [ ]);
+	}
+
+
 
 }
