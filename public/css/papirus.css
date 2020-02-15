@@ -1,0 +1,170 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+@font-face {
+	font-family: bauhs;
+	src: url(../fonts/BAUHS93.ttf);
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+	/*min-height: 100%;*/
+	background-color: #333;
+	color: #636b6f;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 200;
+	margin: 0;
+	font-size: 18px;
+}
+
+body {
+	/*min-height: 100%;*/
+	color: #fff;
+	text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+	box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+
+	display: grid;
+	/*grid-template-rows: 1fr;*/
+	grid-auto-rows: minmax(100px, auto);
+}
+
+.cover-container {
+	width: 1200px;
+	margin: 0 auto;
+	min-height: 100%;
+}
+
+
+/*
+ * Header
+ */
+.masthead {
+	/*background-color: #ccc;*/
+	height: 100px;
+	line-height: 100px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.logo {
+	font-size: 48px;
+	font-weight: 400;
+	font-family: 'bauhs', sans-serif;
+	line-height: 100px;
+	justify-self: start;
+}
+
+.nav {
+	font-weight: 400;
+	justify-self: end;
+}
+
+.nav-element a {
+	padding: 0 15px;
+	display: block;
+}
+
+.welcome {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+}
+
+.genre {
+	align-self: start;
+	background-color: rgb(40,40,40);
+	border-radius: 3px;
+	/*max-height: 500px;*/
+
+	position: sticky;
+	top: 25px;
+	padding: 10px 20px;
+	display: grid;
+}
+
+.genre-title {
+	text-align: center;
+	padding: 6px 0;
+}
+
+.genre-elem {
+	padding: 6px 0;
+	border-top: solid 1px rgba(255,255,255,.1);
+}
+
+.genre-elem:hover {
+	color: #ccc;
+}
+
+.list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 25px;
+	padding: 0 25px;
+}
+
+.book-short {
+	max-width: 300px;
+	display: grid;
+	grid-gap: 10px;
+}
+
+.bs-img {
+	width: 100%;
+}
+
+.bs-info {
+	font-size: 12px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	color: #eee;
+}
+
+.bi-genre {
+	justify-self: start;
+}
+.bi-line {
+	border-bottom: solid 1px #aaa;
+	height: 50%;
+}
+.bi-date {
+	justify-self: end;
+}
+
+.bs-title {
+	font-size: 22px;
+}
+
+.btn-black {
+	background-color: #101010;
+	border-radius: 3px;
+	padding: 10px 15px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 140px;
+}
+
+.btn-name {
+	justify-self: start;
+}
+
+.btn-ico {
+	justify-self: end;
+	height: 24px;
+	width: 24px;
+	background: url(../images/arrow.png);
+}
