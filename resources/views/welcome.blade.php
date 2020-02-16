@@ -20,7 +20,7 @@
     			<div class="bi-date">15.02.2020</div>
     		</div>
     		<div class="bs-title">Левые психопаты. От якобинцев до Движения "Окупай"</div>
-			<a href="/book/view/left-psychopaths" class="btn-black">
+			<a href="/book/view/1" class="btn-black">
 				<div class="btn-name">Читать</div>
 				<div class="btn-ico"></div>
 			</a>

@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>{{$book->name}}</title>
-</head>
-<body>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</body>
-</html>
+@extends('layout')
+
+@section('content')
+<div class="view">
+	<div class="view-head">
+		<div class="view-background" style="background-image: url(/images/<?=$book->image?>);">
+			
+		</div>
+		<div class="view-content">
+			<img src="/images/<?=$book->image?>" class="image">
+			<div class="info">
+				<div class="book-title"><?=$book->name?></div>
+				<div class="book-author"><?=$book->author?></div>
+				<div class="book-category"><?=$book->category?></div>
+			</div>
+		</div>
+	</div>
+	<div class="description">
+		<p>Чтение "Левых психопатов" откроет глаза многим. Воображаемые репрессивные неврозы правых блекнут в сравнении с эгоистичной, порочной паранойей левых (чему порой помогает употребление наркотиков и доказанное повреждение головного мозга). Почему правые не смогли предотвратить рост социалистических государств по всему Западу с их политикой заполнения себя иммигрантами из Третьего мира, чтобы восполнить свою собственную неспособность обучить свою молодежь до максимума (согласно их способностям)? Вероятно, уважающие семью китайцы сметут все перед собой, поскольку Запад падет под ношей тех смешных трудностей, которые левые психопаты помогли навесить на него. Чтение данной книги не только доставит читателю удовольствие, но и поможет пересмотреть прежние взгляды. Это новый шанс воспринять то, что Айзенк впервые начал объяснять в академическом ключе в 1954 году.</p>
+		<p>Доктор Крис Брэнд. Кафедра психологии, Эдинбургский университет (1970-1997) </p>
+		<p>Одно из последствий триумфа левых - быстрый рост причудливых психиатрических диагнозов для любого рода консерваторов. Теперь Керри Болтон написал основанную на фактах работу о патологии левых - о тщеславии Руссо, садистской жестокости большевиков и о неадекватных отношениях родителей и детей Новых левых 1960-х. Общая черта многих лиц, описываемых здесь, это самовлюбленность зазнаек - высокомерие людей, которые абсолютно уверены в своем предопределении к реформированию общества и абсолютно безжалостны при воплощении своих идей. Эта книга - существенный вклад в основанную на психологии критику левых.</p>
+	</div>
+</div>
+@endsection
