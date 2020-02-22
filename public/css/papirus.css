@@ -10,6 +10,10 @@ a:hover {
 	text-decoration: none;
 }
 
+a {
+	display: block;
+}
+
 
 @font-face {
 	font-family: bauhs;
@@ -43,8 +47,13 @@ body {
 	grid-auto-rows: minmax(100px, auto);
 }
 
+h6>a {
+	color: #777;
+	text-shadow: none;
+}
+
 .cover-container {
-	width: 100%;
+	max-width: 100%;
 	margin: 0 auto;
 }
 
@@ -69,7 +78,6 @@ body {
 .nav {
 	font-weight: 400;
 	justify-self: end;
-	/*display: none;*/
 }
 
 .nav-element a {
@@ -198,16 +206,49 @@ body {
 	height: 400px;
 }
 
-.tab {
-	width: 40px;
-	height: 10px;
-	display: block;
-	margin: 0;
+.chapters {
+	border: solid 2px #545454;
+	border-radius: 3px;
+	margin-bottom: 30px;
+}
+
+.chapter-elem {
+	padding: 6px 12px;
+	border-bottom: solid 2px #545454;
+}
+
+.chapter-elem:hover {
+	background: url(../images/next.png) no-repeat #393939;
+	background-position: 5px 50%;
+	background-size: 22px;
+	padding-left: 33px;
+}
+
+.read {
+	padding: 10px 20px;
+}
+
+.nav-page {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.btn-green {
+	background: #009688;
+	padding: 5px 12px;
+}
+
+.btn-prev {
+	justify-self: start;
+}
+
+.btn-next {
+	justify-self: end;
 }
 
 @media(min-width: 720px) {
 	.cover-container {
-		width: 1200px;
+		max-width: 1200px;
 		margin: 0 auto;
 	}
 
@@ -233,6 +274,10 @@ body {
 
 	.book-short {
 		max-width: 300px;
+	}
+
+	.read {
+		padding: 10px 0;
 	}
 }
 
