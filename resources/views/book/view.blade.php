@@ -11,12 +11,12 @@
 			<div class="info">
 				<div class="book-title">{{$book->name}}</div>
 				<div class="book-author">{{$book->author}}</div>
-				<div class="book-category">{{$book->category}}</div>
+				<div class="book-category">{{$category->name}}</div>
 			</div>
 		</div>
 	</div>
 	<div class="description">
-		{{$book->description}}
+		<p><?= preg_replace('/\n/', '<p>', $book->description) ?>
 	</div>
 
 	<div class="chapters">

@@ -12,8 +12,11 @@ class BooksController extends Controller
 	{
 		$book = App\Books::getAlias($alias);
 		$chapters = App\Chapters::getAll($book->id);
+		$category = App\Categories::find($book->category);
+
 		return view('book.view', [
 			'book' => $book,
+			'category' => $category,
 			'chapters' => $chapters
 		]);
 	}
@@ -24,6 +27,7 @@ class BooksController extends Controller
 		$chapter = App\Chapters::getOne($book->id, $chap);
 		$prev = App\Chapters::getPrev($book->id, $chapter->ord);
 		$next = App\Chapters::getNext($book->id, $chapter->ord);
+		
 		return view('book.read', [
 			'book' => $book,
 			'chapter' => $chapter,

@@ -10,11 +10,11 @@
 		<a href="{{$next}}" class="btn-green btn-next">Вперёд</a>
 	</div>
 
-	<div class="text">{{$chapter->text}}</div>
+	<div class="text"><p><?= preg_replace('/\n/', '<p>', $chapter->text) ?></div>
 
 	<div class="nav-page">
-		<a href="" class="btn-green btn-prev">Назад</a>
-		<a href="" class="btn-green btn-next">Вперёд</a>
+		<a href="{{$prev}}" class="btn-green btn-prev">Назад</a>
+		<a href="{{$next}}" class="btn-green btn-next">Вперёд</a>
 	</div>
 </div>
 @endsection
