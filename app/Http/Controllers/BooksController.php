@@ -10,6 +10,17 @@ use App\Books;
 class BooksController extends Controller
 {
 
+	public function index() 
+	{
+		return Books::all();
+	}
+
+	public function show(string $alias)
+	{
+		$book = Books::getAlias($alias);
+		return $book;
+	}
+
 	/*public function view($alias)
 	{
 		$book = App\Books::getAlias($alias);
@@ -37,35 +48,5 @@ class BooksController extends Controller
 			'next' => '/book' . ($next ? "/read/$book->alias/$next->id" : "/view/$book->alias"),
 		]);
 	}*/
-
-	public function index()
-	{
-		return Books::all();
-	}
-
-	public function store(BookRequest $request)
-	{
-		$do = Books::create($request->validated());
-		return $do;
-	}
-
-	public function show(Books $book)
-	{
-		return $book = Books::findOrFail($book);
-	}
-
-	public function update(BookRequest $request, $id)
-	{
-		$book = Books::findOrFail($id);
-		$book->fill($request->except(['id']));
-		$book->save();
-		return response()->json($book);
-	}
-
-	public function destroy(BookRequest $request, $id)
-	{
-		$book = Books::findOrFail($id);
-		if($book->delete()) return response(null, 204);
-	}
 
 }

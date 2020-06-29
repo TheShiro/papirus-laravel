@@ -26,10 +26,11 @@ class BookRequest extends FormRequest
         $rules = [
             'title' => 'required|string|unique:books,title',
             'description' => '',
-            'complexity' => 'required|min:1|max:10',
-            'minPlayers' => 'required|min:1|max:10',
-            'maxPlayers' => 'required|min:1|max:10',
-            'isActive' => 'required|boolean'
+            'author' => 'string',
+            'pageCount' => 'integer',
+            'category' => 'integer',
+            'image' => 'string',
+            'alias' => 'required|string|unique:books,alias'
         ];
 
         switch ($this->getMethod()) {

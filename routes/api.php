@@ -14,8 +14,7 @@ use Http\Controllers\BooksController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+header('Access-Control-Allow-Origin: *');
 
-Route::resource('/books', 'BooksController');
+Route::get('/books', 'BooksController@index');
+Route::get('/books/{alias}', 'BooksController@show');
