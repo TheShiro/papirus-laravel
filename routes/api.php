@@ -18,3 +18,6 @@ header('Access-Control-Allow-Origin: *');
 
 Route::get('/books', 'BooksController@index');
 Route::get('/books/{alias}', 'BooksController@show');
+
+Route::get('/chapters/', 'ChaptersController@index');
+Route::get('/chapters/{book}', 'ChaptersController@show');

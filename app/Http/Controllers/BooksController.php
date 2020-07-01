@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
-use App\Http\Requests\BookRequest;
-use App;
+use Illuminate\Http\Request;
 use App\Books;
 
 class BooksController extends Controller
@@ -17,8 +15,17 @@ class BooksController extends Controller
 
 	public function show(string $alias)
 	{
-		$book = Books::getAlias($alias);
-		return $book;
+		return Books::getAlias($alias);
+	}
+
+	public function save()
+	{
+		//
+	}
+
+	public function remove()
+	{
+
 	}
 
 	/*public function view($alias)

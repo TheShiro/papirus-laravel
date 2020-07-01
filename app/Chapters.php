@@ -11,7 +11,7 @@ class Chapters extends Model
     	return static::where('book_id', $bid)->select('id', 'name', 'ord')->get();
     }
 
-    public static function getOne($bid, $cid)
+    public static function getOne(int $bid, int $cid)
     {
     	return static::where([
     		['book_id', $bid],
@@ -19,7 +19,7 @@ class Chapters extends Model
     	])->first();
     }
 
-    public static function getPrev($bid, $ord)
+    public static function getPrev(int $bid, int $ord)
     {
     	return static::where([
     		['book_id', '=', $bid],
@@ -27,7 +27,7 @@ class Chapters extends Model
     	])->select('id', 'ord')->orderBy('ord', 'desc')->first();
     }
 
-    public static function getNext($bid, $ord)
+    public static function getNext(int $bid, int $ord)
     {
     	return static::where([
     		['book_id', '=', $bid],
