@@ -26,6 +26,19 @@ class ChaptersController extends Controller
 		return $chapters;
 	}
 
+	public function read(string $book, int $chapter)
+	{
+		$chap = Chapters::getOne($chapter);
+		$next = Chapters::getNext($chap['book_id'], $chap['ord']);
+		$prev = Chapters::getPrev($chap['book_id'], $chap['ord']);
+		$bibl = Books::getAlias($book);
+		$chap['next'] = $next;
+		$chap['prev'] = $prev;
+		$chap['book'] = $bibl;
+
+		return $chap;
+	}
+
 	public function save()
 	{
 		//

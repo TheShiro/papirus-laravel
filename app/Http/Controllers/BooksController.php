@@ -18,14 +18,31 @@ class BooksController extends Controller
 		return Books::getAlias($alias);
 	}
 
-	public function save()
+	public function store(Request $request)
+	{
+		/*Books::insertGetId([
+			'title' => 'test'
+		]);*/
+
+		$book = Books::create($request->all());
+		return response()->json($book, 201);
+	}
+
+	public function update()
 	{
 		//
 	}
 
-	public function remove()
+	public function delete()
 	{
+		//
+	}
 
+	public function search(string $search) 
+	{
+		$find = Books::whereRaw("title like '%" . $search . "%'")->get();
+		// print_r($find);
+		return $find;
 	}
 
 	/*public function view($alias)

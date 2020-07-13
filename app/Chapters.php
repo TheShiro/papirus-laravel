@@ -6,15 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Chapters extends Model
 {
-    public static function getAll($bid)
+    public static function getAll(int $bid)
     {
     	return static::where('book_id', $bid)->select('id', 'name', 'ord')->get();
     }
 
-    public static function getOne(int $bid, int $cid)
+    public static function getOne(int $cid)
     {
     	return static::where([
-    		['book_id', $bid],
     		['id', $cid]
     	])->first();
     }
