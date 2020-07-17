@@ -20,10 +20,6 @@ class BooksController extends Controller
 
 	public function store(Request $request)
 	{
-		/*Books::insertGetId([
-			'title' => 'test'
-		]);*/
-
 		$book = Books::create($request->all());
 		return response()->json($book, 201);
 	}

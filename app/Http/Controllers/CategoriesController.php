@@ -13,4 +13,10 @@ class CategoriesController extends Controller
 		return Categories::all();
 	}
 
+	public function store(Request $request)
+	{
+		$cat = Categories::create($request->all());
+		return response()->json($cat, 201);
+	}
+
 }

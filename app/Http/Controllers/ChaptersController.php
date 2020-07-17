@@ -39,14 +39,24 @@ class ChaptersController extends Controller
 		return $chap;
 	}
 
-	public function save()
+	public function store(Request $request)
+	{
+		$ord = Chapters::select('ord')->where(['book_id' => $request->book_id])->orderBy('ord', 'desc')->first();
+		$params = $request->all();
+		$params['ord'] = ++$ord->ord;
+		
+		$chap = Chapters::create($params);
+		return response()->json($chap, 201);
+	}
+
+	public function update()
 	{
 		//
 	}
 
-	public function remove()
+	public function delete()
 	{
-
+		//
 	}
 
 }

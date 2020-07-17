@@ -26,7 +26,9 @@ Route::post('/books', 'BooksController@store');
 Route::get('/chapters', 'ChaptersController@index');
 Route::get('/chapters/{book}', 'ChaptersController@show');
 Route::get('/chapters/{book}/{chapter}', 'ChaptersController@read');
+Route::post('/chapters', 'ChaptersController@store');
 
 Route::get('/category', 'CategoriesController@index');
+Route::post('/category', 'CategoriesController@store');
 
-Route::post('file/upload', 'FileController@upload');
+Route::post('/file/upload', 'FileController@upload');

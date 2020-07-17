@@ -11,9 +11,9 @@ class FileController extends Controller
 	public function upload(Request $request)
     {
         $filename = uniqid() . '_' . str_replace(' ', '_', $request->file->getClientOriginalName());
-        $path = Storage::putFileAs('uploads', $request->file, $filename, 'public');
+        $path = Storage::disk('public')->putFileAs('uploads', $request->file, $filename);
 
-        if (Storage::exists($path)) {
+        if (Storage::disk('public')->exists($path)) {
             return $path;
         }
 

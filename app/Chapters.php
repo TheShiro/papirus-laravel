@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Chapters extends Model
 {
+    protected $fillable = ['book_id', 'name', 'text', 'ord'];
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
+    
     public static function getAll(int $bid)
     {
     	return static::where('book_id', $bid)->select('id', 'name', 'ord')->get();
