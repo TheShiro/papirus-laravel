@@ -49,14 +49,16 @@ class ChaptersController extends Controller
 		return response()->json($chap, 201);
 	}
 
-	public function update()
+	public function update(Request $request)
 	{
-		//
+		$book = Chapters::where('id', $request->all()['id'])->update($request->all());
+		return response()->json($book, 201);
 	}
 
-	public function delete()
+	public function delete(Request $request)
 	{
-		//
+		$book = Chapters::where('id', $request->all()['id'])->delete();
+		return response()->json($book, 201);
 	}
 
 }

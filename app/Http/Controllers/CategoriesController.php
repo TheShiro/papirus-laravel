@@ -19,4 +19,16 @@ class CategoriesController extends Controller
 		return response()->json($cat, 201);
 	}
 
+	public function update(Request $request)
+	{
+		$book = Categories::where('id', $request->all()['id'])->update($request->all());
+		return response()->json($book, 201);
+	}
+
+	public function delete(Request $request)
+	{
+		$book = Categories::where('id', $request->all()['id'])->delete();
+		return response()->json($book, 201);
+	}
+
 }
